@@ -1,15 +1,16 @@
 package ua.edu.ucu.flower;
 
 public enum FlowerType {
-    CHAMOMILE("Chamomile"), ROSE("rose"), TULIP("TULIP");
-    String stringRepresentation;
+    CHAMOMILE("Chamomile"), ROSE("Rose"), TULIP("Tulip");
+    
+    private final String displayName;
 
-    FlowerType(String stringRepresentation) {
-        this.stringRepresentation = stringRepresentation;
+    FlowerType(String displayName) {
+        this.displayName = displayName;
     }
 
     @Override
     public String toString() {
-        return stringRepresentation;
+        return displayName;
     }
 }

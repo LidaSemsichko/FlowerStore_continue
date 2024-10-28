@@ -7,17 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class FlowerController {
-    @GetMapping("/flower")
-	public static List<Flower> listFlowers() {
-		Flower flower1 = new Flower();
-		Flower flower2 = new Flower();
-		Flower flower3 = new Flower();
-		flower1.setColor(FlowerColor.RED);
-		// flower1.setFlowerType(FlowerType.ROSE);
-		flower2.setColor(FlowerColor.RED);
-		// flower2.setFlowerType(FlowerType.ROSE);
-		flower3.setColor(FlowerColor.RED);
-		// flower3.setFlowerType(FlowerType.ROSE);
-		return List.of(flower1, flower2, flower3);
-	}
+    
+    @GetMapping("/flowers")
+    public static List<Flower> getFlowerList() {
+        Flower firstFlower = new Flower();
+        Flower secondFlower = new Flower();
+        Flower thirdFlower = new Flower();
+        
+        firstFlower.setFlowerColor(FlowerColor.RED);
+        
+        secondFlower.setFlowerColor(FlowerColor.RED);
+        
+        thirdFlower.setFlowerColor(FlowerColor.RED);
+        
+        return List.of(firstFlower, secondFlower, thirdFlower);
+    }
 }
