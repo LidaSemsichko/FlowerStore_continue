@@ -1,20 +1,21 @@
 package ua.edu.ucu.delivery;
 
 import java.util.List;
+
+import lombok.Getter;
 import ua.edu.ucu.order.Item;
 
+@Getter
 public class DHLDeliveryStrategy implements Delivery {
-    private final String deliveryDescription;
-
-    public DHLDeliveryStrategy() {
-        this.deliveryDescription = "DHL Delivery Service";
+    private String description;
+    public DHLDeliveryStrategy(){
+        description = "DHLDelivery";
     }
-
-    @Override
-    public String deliver(List<Item> items) {
-        StringBuilder message = new StringBuilder("Total items delivered: ");
-        message.append(items.size());
-        message.append("; Delivery Method: ").append(deliveryDescription);
-        return message.toString();
+    public String deliver(List<Item> items){
+        StringBuilder str = new StringBuilder("Delivered ");
+        str.append(items.size());
+        str.append(" items;" + description);
+        return str.toString();
     }
+    
 }
