@@ -7,15 +7,17 @@ public class FlowerSpecification {
     private FlowerColor color;
     private FlowerType flowerType;
 
-    public FlowerSpecification(FlowerColor colorNew, FlowerType type) {
-        color = colorNew;
-        flowerType = type;
+    public FlowerSpecification(FlowerColor newColor, FlowerType type) {
+        this.color = newColor;
+        this.flowerType = type;
     }
-    public boolean matches(FlowerSpecification anotherSpec) {
-        return color.equals(anotherSpec.color) 
-        && flowerType.equals(anotherSpec.flowerType);
+
+    public boolean isMatching(FlowerSpecification otherSpec) {
+        return this.color.equals(otherSpec.color) && this.flowerType.equals(otherSpec.flowerType);
     }
-    public String toString(){
-        return color.toString() + flowerType.toString();
+
+    @Override
+    public String toString() {
+        return color.toString() + " " + flowerType.toString();
     }
 }

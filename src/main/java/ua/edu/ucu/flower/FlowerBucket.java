@@ -1,24 +1,24 @@
 package ua.edu.ucu.flower;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FlowerBucket {
-    private ArrayList<FlowerPack> flowers;
-    
+    private List<FlowerPack> flowerPacks;
+
     public FlowerBucket() {
-        flowers = new ArrayList<>();
+        this.flowerPacks = new ArrayList<>();
     }
-    public FlowerBucket(ArrayList<FlowerPack> pack) {
-        flowers = new ArrayList<FlowerPack>(pack);
+
+    public FlowerBucket(List<FlowerPack> packs) {
+        this.flowerPacks = new ArrayList<>(packs);
     }
-    public void addFlower(FlowerPack pack) {
-        flowers.add(pack);
+
+    public void addFlowerPack(FlowerPack pack) {
+        flowerPacks.add(pack);
     }
-    public double getPrice() {
-        double sum = 0;
-        for (FlowerPack pack: flowers) {
-            sum += pack.getPrice();
-        }
-        return sum;
+
+    public double calculateTotalPrice() {
+        return flowerPacks.stream().mapToDouble(FlowerPack::getPrice).sum();
     }
 }

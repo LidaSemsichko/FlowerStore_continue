@@ -12,7 +12,7 @@ public class PostDeliveryStrategy implements Delivery {
     public String deliver(List<Item> items){
         StringBuilder str = new StringBuilder("Delivered ");
         str.append(items.size());
-        str.append(" items;" + description);
+        str.append(" ," + description);
         return str.toString();
     }
 }

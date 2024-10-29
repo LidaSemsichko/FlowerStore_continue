@@ -1,10 +1,8 @@
 package ua.edu.ucu.delivery;
 
 import java.util.List;
-
-import lombok.Getter;
 import ua.edu.ucu.order.Item;
-
+import lombok.Getter;
 @Getter
 public class DHLDeliveryStrategy implements Delivery {
     private String description;
@@ -14,7 +12,7 @@ public class DHLDeliveryStrategy implements Delivery {
     public String deliver(List<Item> items){
         StringBuilder str = new StringBuilder("Delivered ");
         str.append(items.size());
-        str.append(" items;" + description);
+        str.append(" ," + description);
         return str.toString();
     }
     
