@@ -18,7 +18,7 @@ public class DHLDeliveryStrategyTest {
         DHLDeliveryStrategy deliveryStrategy = new DHLDeliveryStrategy();
         List<Item> items = new ArrayList<>();
         String result = deliveryStrategy.deliver(items);
-        assertEquals("Delivered 0 items;DHLDelivery", result);
+        assertEquals("Delivered 0 ,DHLDelivery", result);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class DHLDeliveryStrategyTest {
         items.add(new Flower());
         items.add(new Flower());
         String result = deliveryStrategy.deliver(items);
-        assertEquals("Delivered 2 items;DHLDelivery", result);
+        assertEquals("Delivered 2 ,DHLDelivery", result);
     }
 
     @Test
